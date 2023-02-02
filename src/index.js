@@ -3,7 +3,6 @@ import { menuPage } from "./menu.js";
 import { reservationPage } from "./reservation.js";
 import { accessPage } from "./access.js";
 import { aboutPage } from "./about.js";
-import { header } from "./header.js";
 
 initialLoad();
 

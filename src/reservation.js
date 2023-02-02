@@ -1,58 +1,49 @@
+import { header } from "./header";
+
 export function reservationPage() {
   const content = document.querySelector("#content");
   content.replaceChildren();
-  document.body.style.backgroundImage =
-    "url('../Assets/close-up-dark-blue-fabric-texture-free-photo.jpg')";
+  document.body.style.backgroundImage = null;
+  document.body.style.backgroundColor = "beige";
 
-  const header = document.createElement("div");
-  header.id = "header";
-  content.appendChild(header);
+  header();
 
-  const title = document.createElement("title");
-  title.id = "title";
-  header.appendChild(title);
+  const reserve = document.createElement("div");
+  reserve.id = "reservationDiv";
+  content.appendChild(reserve);
 
-  const navBar = document.createElement("navBar");
-  navBar.id = "navBar";
-  header.appendChild(navBar);
+  const phoneReserve = document.createElement("div");
+  const phone1 = document.createElement("p");
+  phone1.classList.add("infoText");
+  const phone2 = document.createElement("p");
+  phone2.classList.add("infoText");
+  phone2.id = "phoneNumber";
+  phone1.innerHTML = "Please call us to reserve your table at:";
+  phone2.innerHTML = "416·000·0000";
+  phoneReserve.appendChild(phone1);
+  phoneReserve.appendChild(phone2);
+  reserve.appendChild(phoneReserve);
 
-  const eTitle = document.createElement("h1");
-  eTitle.innerHTML = "ConaDon";
-  eTitle.classList.add("title");
-  title.appendChild(eTitle);
+  const onlineReserve = document.createElement("div");
+  const online1 = document.createElement("p");
+  online1.innerHTML = "Make an online reservation";
+  online1.classList.add("infoText");
+  const reserveForm = document.createElement("FORM");
+  reserveForm.id = "reservationForm";
+  const firstInput = document.createElement("INPUT");
+  firstInput.setAttribute("type", "text");
+  const secondInput = document.createElement("INPUT");
+  secondInput.setAttribute("type", "text");
+  const emailInput = document.createElement("INPUT");
+  emailInput.setAttribute("type", "email");
+  const date = document.createElement("INPUT");
+  date.setAttribute("type", "datetime-local");
+  reserveForm.appendChild(firstInput);
+  reserveForm.appendChild(secondInput);
+  reserveForm.appendChild(emailInput);
+  reserveForm.appendChild(date);
 
-  const jTitle = document.createElement("h1");
-  jTitle.innerHTML = "コナー丼";
-  jTitle.classList.add("title");
-  title.appendChild(jTitle);
-
-  const home = document.createElement("p");
-  home.innerHTML = "Home";
-  home.id = "home";
-  home.classList.add("navigation");
-  navBar.appendChild(home);
-
-  const menu = document.createElement("p");
-  menu.innerHTML = "Menu";
-  menu.id = "menu";
-  menu.classList.add("navigation");
-  navBar.appendChild(menu);
-
-  const reservation = document.createElement("p");
-  reservation.innerHTML = "Reservation";
-  reservation.id = "reservation";
-  reservation.classList.add("navigation");
-  navBar.appendChild(reservation);
-
-  const access = document.createElement("p");
-  access.innerHTML = "Access";
-  access.id = "access";
-  access.classList.add("navigation");
-  navBar.appendChild(access);
-
-  const about = document.createElement("p");
-  about.innerHTML = "About";
-  about.id = "about";
-  about.classList.add("navigation");
-  navBar.appendChild(about);
+  onlineReserve.appendChild(online1);
+  onlineReserve.appendChild(reserveForm);
+  reserve.appendChild(onlineReserve);
 }

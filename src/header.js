@@ -1,3 +1,4 @@
+//website header & navigation with menu, reservation, access, about
 export function header() {
   const content = document.querySelector("#content");
 

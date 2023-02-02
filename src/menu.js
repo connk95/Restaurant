@@ -3,8 +3,8 @@ import { header } from "./header";
 export function menuPage() {
   const content = document.querySelector("#content");
   content.replaceChildren();
-  document.body.style.backgroundImage =
-    "url('../Assets/close-up-dark-blue-fabric-texture-free-photo.jpg')";
+  document.body.style.backgroundImage = null;
+  document.body.style.backgroundColor = "beige";
 
   header();
 
@@ -19,7 +19,15 @@ export function menuPage() {
 
   foodItem("../Assets/gyudon.jpg", "GyuDon", "$15");
 
-  foodItem("../Assets/karaage.jpg", "Karaage", "$15");
+  foodItem("../Assets/karaage.jpg", "KaraageDon", "$15");
+
+  foodItem("../Assets/katsudon.jpg", "KatsuDon", "$15");
+
+  foodItem("../Assets/tendon.jpg", "TenDon", "$12");
+
+  foodItem("../Assets/unadon.jpg", "UnaDon", "$15");
+
+  foodItem("../Assets/curryrice.jpg", "Curry Rice", "$10");
 }
 
 function foodItem(image, name, price) {

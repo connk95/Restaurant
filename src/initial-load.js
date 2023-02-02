@@ -1,5 +1,6 @@
 import { header } from "./header";
 
+//home page
 export function initialLoad() {
   const content = document.querySelector("#content");
   content.replaceChildren();

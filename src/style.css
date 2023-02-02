@@ -63,13 +63,18 @@ h1 {
 
 #menuDiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 100px;
 }
 
 .dish {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid grey;
+  width: 300px;
 }
 
 .description {
@@ -79,7 +84,51 @@ h1 {
   justify-content: center;
 }
 
+.description > :first-child {
+  color: black;
+  border: 4px solid black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  padding: 0 10px 0 10px;
+}
+
+.description > :nth-child(2) {
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+}
+
 .foodPic {
   height: 300px;
   width: 300px;
+}
+
+#reservationDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.infoText {
+  color: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+#reservationForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="datetime-local"] {
+  width: 200px;
+  padding: 4px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
