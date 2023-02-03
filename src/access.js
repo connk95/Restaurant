@@ -1,58 +1,60 @@
+import { header } from "./header";
+
 export function accessPage() {
   const content = document.querySelector("#content");
   content.replaceChildren();
-  document.body.style.backgroundImage =
-    "url('../Assets/close-up-dark-blue-fabric-texture-free-photo.jpg')";
+  document.body.style.backgroundImage = null;
+  document.body.style.backgroundColor = "beige";
 
-  const header = document.createElement("div");
-  header.id = "header";
-  content.appendChild(header);
+  header();
 
-  const title = document.createElement("title");
-  title.id = "title";
-  header.appendChild(title);
+  const accessDiv = document.createElement("div");
+  accessDiv.id = "accessDiv";
+  content.appendChild(accessDiv);
 
-  const navBar = document.createElement("navBar");
-  navBar.id = "navBar";
-  header.appendChild(navBar);
+  const accessInfo = document.createElement("p");
+  accessInfo.innerHTML =
+    "We are located on 123 ABC Street, across from ZYX Bank";
+  accessInfo.classList.add("infoText");
+  const parking = document.createElement("p");
+  parking.innerHTML =
+    "Underground parking is available for customers at the bank";
+  parking.classList.add("infoText");
+  accessDiv.appendChild(accessInfo);
+  accessDiv.appendChild(parking);
 
-  const eTitle = document.createElement("h1");
-  eTitle.innerHTML = "ConaDon";
-  eTitle.classList.add("title");
-  title.appendChild(eTitle);
+  const mapDiv = document.createElement("div");
+  const map = document.createElement("img");
+  map.src = "../Assets/map.jpg";
+  map.id = "map";
+  mapDiv.appendChild(map);
+  accessDiv.appendChild(mapDiv);
 
-  const jTitle = document.createElement("h1");
-  jTitle.innerHTML = "コナー丼";
-  jTitle.classList.add("title");
-  title.appendChild(jTitle);
+  const hoursDiv = document.createElement("div");
+  hoursDiv.id = "hoursDiv";
+  const hours = document.createElement("p");
+  hours.innerHTML = "Hours";
+  hoursDiv.appendChild(hours);
 
-  const home = document.createElement("p");
-  home.innerHTML = "Home";
-  home.id = "home";
-  home.classList.add("navigation");
-  navBar.appendChild(home);
+  openHours("Sunday", "10:00 - 19:00");
+  openHours("Monday", "11:00 - 22:00");
+  openHours("Tuesday", "11:00 - 22:00");
+  openHours("Wednesday", "11:00 - 22:00");
+  openHours("Thursday", "11:00 - 22:00");
+  openHours("Friday", "11:00 - 24:00");
+  openHours("Saturday", "11:00 - 24:00");
+}
 
-  const menu = document.createElement("p");
-  menu.innerHTML = "Menu";
-  menu.id = "menu";
-  menu.classList.add("navigation");
-  navBar.appendChild(menu);
+function openHours(day, hours) {
+  const hoursDiv = document.querySelector("#hoursDiv");
 
-  const reservation = document.createElement("p");
-  reservation.innerHTML = "Reservation";
-  reservation.id = "reservation";
-  reservation.classList.add("navigation");
-  navBar.appendChild(reservation);
-
-  const access = document.createElement("p");
-  access.innerHTML = "Access";
-  access.id = "access";
-  access.classList.add("navigation");
-  navBar.appendChild(access);
-
-  const about = document.createElement("p");
-  about.innerHTML = "About";
-  about.id = "about";
-  about.classList.add("navigation");
-  navBar.appendChild(about);
+  const dayDiv = document.createElement("div");
+  dayDiv.id = "dayDiv";
+  const weekDay = document.createElement("p");
+  weekDay.innerHTML = day;
+  const dayHours = document.createElement("p");
+  dayHours.innerHTML = hours;
+  dayDiv.appendChild(weekDay);
+  dayDiv.appendChild(dayHours);
+  hoursDiv.appendChild(dayDiv);
 }

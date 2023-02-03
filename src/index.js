@@ -18,9 +18,6 @@ const pageNav = (function () {
 
   const accessTab = document.querySelector("#access");
   accessTab.addEventListener("click", accessPage);
-
-  const aboutTab = document.querySelector("#about");
-  aboutTab.addEventListener("click", aboutPage);
 })();
 // const navigate = document.querySelector(".navigation");x
 

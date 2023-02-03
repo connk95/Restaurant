@@ -47,10 +47,4 @@ export function header() {
   access.id = "access";
   access.classList.add("navigation");
   navBar.appendChild(access);
-
-  const about = document.createElement("p");
-  about.innerHTML = "About";
-  about.id = "about";
-  about.classList.add("navigation");
-  navBar.appendChild(about);
 }

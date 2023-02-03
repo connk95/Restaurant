@@ -108,6 +108,7 @@ h1 {
 #reservationDiv {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 100px;
 }
 
@@ -118,10 +119,23 @@ h1 {
   font-size: 24px;
 }
 
+#onlineReserve {
+  display: flex;
+  flex-direction: column;
+  max-width: fit-content;
+}
+
 #reservationForm {
   display: flex;
   flex-direction: column;
+}
+
+#reservationForm > div {
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
   align-items: center;
+  justify-content: space-between;
 }
 
 input[type="text"],
@@ -131,4 +145,15 @@ input[type="datetime-local"] {
   padding: 4px;
   margin: 8px 0;
   box-sizing: border-box;
+  height: 30px;
+}
+
+#accessDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#map {
+  height: 400px;
 }
