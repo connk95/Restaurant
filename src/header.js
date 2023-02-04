@@ -1,10 +1,11 @@
 //website header & navigation with menu, reservation, access, about
 export function header() {
   const content = document.querySelector("#content");
+  const headerDiv = document.createElement("div");
 
   const header = document.createElement("div");
   header.id = "header";
-  content.appendChild(header);
+  headerDiv.appendChild(header);
 
   const title = document.createElement("title");
   title.id = "title";
@@ -47,4 +48,6 @@ export function header() {
   access.id = "access";
   access.classList.add("navigation");
   navBar.appendChild(access);
+
+  content.appendChild(headerDiv);
 }

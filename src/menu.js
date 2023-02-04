@@ -2,17 +2,16 @@ import { header } from "./header";
 
 export function menuPage() {
   const content = document.querySelector("#content");
-  content.replaceChildren();
+  content.removeChild(content.lastChild);
   document.body.style.backgroundImage = null;
   document.body.style.backgroundColor = "beige";
-
-  header();
 
   //create div for menu
   const menuDiv = document.createElement("div");
   menuDiv.id = "menuDiv";
   content.appendChild(menuDiv);
 
+  //add menu items
   foodItem("../Assets/butadon.jpg", "ButaDon", "$12");
 
   foodItem("../Assets/oyakodon.jpg", "OyakoDon", "$12");
@@ -30,6 +29,7 @@ export function menuPage() {
   foodItem("../Assets/curryrice.jpg", "Curry Rice", "$10");
 }
 
+//create & append menu items
 function foodItem(image, name, price) {
   const menuDiv = document.querySelector("#menuDiv");
 
