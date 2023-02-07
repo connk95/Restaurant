@@ -2,7 +2,9 @@ import { header } from "./header";
 
 export function accessPage() {
   const content = document.querySelector("#content");
-  content.removeChild(content.lastChild);
+  if (document.querySelector("#content").childElementCount > 1) {
+    content.removeChild(content.lastChild);
+  }
   document.body.style.backgroundImage = null;
   document.body.style.backgroundColor = "beige";
 
