@@ -1,12 +1,18 @@
-import { header } from "./header";
+import butaDon from "./Assets/butaDon.jpg";
+import oyakoDon from "./Assets/oyakodon.jpg";
+import gyuDon from "./Assets/gyudon.jpg";
+import karaageDon from "./Assets/karaage.jpg";
+import katsuDon from "./Assets/katsudon.jpg";
+import tenDon from "./Assets/tendon.jpg";
+import unaDon from "./Assets/unadon.jpg";
+import curryRice from "./Assets/curryrice.jpg";
 
+//menu page
 export function menuPage() {
   const content = document.querySelector("#content");
   if (document.querySelector("#content").childElementCount > 1) {
     content.removeChild(content.lastChild);
   }
-  document.body.style.backgroundImage = null;
-  document.body.style.backgroundColor = "beige";
 
   //create div for menu
   const menuDiv = document.createElement("div");
@@ -14,21 +20,14 @@ export function menuPage() {
   content.appendChild(menuDiv);
 
   //add menu items
-  foodItem("../Assets/butadon.jpg", "ButaDon", "$12");
-
-  foodItem("../Assets/oyakodon.jpg", "OyakoDon", "$12");
-
-  foodItem("../Assets/gyudon.jpg", "GyuDon", "$15");
-
-  foodItem("../Assets/karaage.jpg", "KaraageDon", "$15");
-
-  foodItem("../Assets/katsudon.jpg", "KatsuDon", "$15");
-
-  foodItem("../Assets/tendon.jpg", "TenDon", "$12");
-
-  foodItem("../Assets/unadon.jpg", "UnaDon", "$15");
-
-  foodItem("../Assets/curryrice.jpg", "Curry Rice", "$10");
+  foodItem(butaDon, "ButaDon", "$12");
+  foodItem(oyakoDon, "OyakoDon", "$12");
+  foodItem(gyuDon, "GyuDon", "$15");
+  foodItem(karaageDon, "KaraageDon", "$15");
+  foodItem(katsuDon, "KatsuDon", "$15");
+  foodItem(tenDon, "TenDon", "$12");
+  foodItem(unaDon, "UnaDon", "$15");
+  foodItem(curryRice, "Curry Rice", "$10");
 }
 
 //create & append menu items

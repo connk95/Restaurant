@@ -1,17 +1,17 @@
-import { header } from "./header";
+import areaMap from "./Assets/map.jpg";
 
+//access page
 export function accessPage() {
   const content = document.querySelector("#content");
   if (document.querySelector("#content").childElementCount > 1) {
     content.removeChild(content.lastChild);
   }
-  document.body.style.backgroundImage = null;
-  document.body.style.backgroundColor = "beige";
 
   const accessDiv = document.createElement("div");
   accessDiv.id = "accessDiv";
   content.appendChild(accessDiv);
 
+  //address
   const accessInfo = document.createElement("p");
   accessInfo.innerHTML =
     "We are located on 123 ABC Street, across from ZYX Bank";
@@ -23,10 +23,11 @@ export function accessPage() {
   accessDiv.appendChild(accessInfo);
   accessDiv.appendChild(parking);
 
+  //div for map and hours
   const mapDiv = document.createElement("div");
   mapDiv.id = "mapDiv";
   const map = document.createElement("img");
-  map.src = "../Assets/map.jpg";
+  map.src = areaMap;
   map.id = "map";
   mapDiv.appendChild(map);
   accessDiv.appendChild(mapDiv);
@@ -39,27 +40,28 @@ export function accessPage() {
   hours.classList.add("flairText");
   hoursDiv.appendChild(hours);
 
-  openHours("Sunday", "10:00 - 19:00");
-  openHours("Monday", "11:00 - 22:00");
-  openHours("Tuesday", "11:00 - 22:00");
-  openHours("Wednesday", "11:00 - 22:00");
-  openHours("Thursday", "11:00 - 22:00");
-  openHours("Friday", "11:00 - 24:00");
-  openHours("Saturday", "11:00 - 24:00");
-}
+  //display hours of operation
+  const openHours = (day, hours) => {
+    const hoursDiv = document.querySelector("#hoursDiv");
 
-function openHours(day, hours) {
-  const hoursDiv = document.querySelector("#hoursDiv");
+    const dayDiv = document.createElement("div");
+    dayDiv.classList.add("dayDiv");
+    const weekDay = document.createElement("p");
+    weekDay.innerHTML = day;
+    weekDay.classList.add("infoText");
+    const dayHours = document.createElement("p");
+    dayHours.innerHTML = hours;
+    dayHours.classList.add("infoText");
+    dayDiv.appendChild(weekDay);
+    dayDiv.appendChild(dayHours);
+    hoursDiv.appendChild(dayDiv);
+  };
 
-  const dayDiv = document.createElement("div");
-  dayDiv.classList.add("dayDiv");
-  const weekDay = document.createElement("p");
-  weekDay.innerHTML = day;
-  weekDay.classList.add("infoText");
-  const dayHours = document.createElement("p");
-  dayHours.innerHTML = hours;
-  dayHours.classList.add("infoText");
-  dayDiv.appendChild(weekDay);
-  dayDiv.appendChild(dayHours);
-  hoursDiv.appendChild(dayDiv);
+  const sunday = openHours("Sunday", "10:00 - 19:00");
+  const monday = openHours("Monday", "11:00 - 22:00");
+  const tuesday = openHours("Tuesday", "11:00 - 22:00");
+  const wednesday = openHours("Wednesday", "11:00 - 22:00");
+  const thursday = openHours("Thursday", "11:00 - 22:00");
+  const friday = openHours("Friday", "11:00 - 24:00");
+  const saturday = openHours("Saturday", "11:00 - 24:00");
 }

@@ -1,12 +1,9 @@
-import { header } from "./header";
-
+//reservation page
 export function reservationPage() {
   const content = document.querySelector("#content");
   if (document.querySelector("#content").childElementCount > 1) {
     content.removeChild(content.lastChild);
   }
-  document.body.style.backgroundImage = null;
-  document.body.style.backgroundColor = "beige";
 
   const reserve = document.createElement("div");
   reserve.id = "reservationDiv";

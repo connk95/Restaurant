@@ -3,10 +3,13 @@ import { menuPage } from "./menu.js";
 import { reservationPage } from "./reservation.js";
 import { accessPage } from "./access.js";
 import { header } from "./header.js";
+import "./style.css";
 
+//initial load for header and home page
 header();
 initialLoad();
 
+//page switching module
 const pageNav = (function () {
   const homeTab = document.querySelector("#home");
   homeTab.addEventListener("click", initialLoad);
